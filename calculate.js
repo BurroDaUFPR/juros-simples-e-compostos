@@ -119,9 +119,16 @@ const Utils = {
         return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
     },
     formatColorTotalCard(value){
-        const signal = Number(value) > 0 ? 
-        document.querySelector('.card.total').classList.add('.positive') : 
-        document.querySelector('.card.total').classList.add('negative')
+        const ValueToChangeColor = Number(value)
+        if (ValueToChangeColor === 0){
+            document.querySelector('.card.total').classList.add('neutral')    
+        } 
+        else if (ValueToChangeColor > 0){
+            document.querySelector('.card.total').classList.add('positive')
+        }
+        else {
+            document.querySelector('.card.total').classList.add('negative')
+        }
     }
 }
 

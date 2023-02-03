@@ -2,7 +2,8 @@
 
 :root {
     --dark-blue: #293040;
-    --light-green: #BFF205;
+    --dark-blue-variation: #414b64;
+    --light-green: #b0e004;
     --dark-green: #88A61B;
     --background-color: rgb(205, 205, 205);
     --bright-red: rgb(220, 38, 38);
@@ -46,9 +47,10 @@ body {
 /*Header ====================*/
 
 header {
-    background-color: var(--dark-blue);
+    background-color: var(--dark-blue-variation);
     background-image: url(assets/header-background.jpg);
     background-size: contain;
+    background-blend-mode:overlay;
     padding: 1.75rem 0rem 7.5rem;
     text-align: center;
 }
@@ -67,29 +69,36 @@ h2 {
 /* Links & buttons ====================*/
 a {
     color: var(--dark-green);
+    font-size: 105%;
     text-decoration: none;
-    transition: .25s;
+    transition: .4s;
 }
 
 a:hover {   
-    font-size: 106%;
+    font-size: 110%;
+    scale: 1.05;
     color: var(--light-green);
 }
 
 button {
     width: 100%;
     height: 50px;
+    font-size: 105%;
     border: none;
 
     padding: 0;
     border-radius: 0.25rem;
     cursor: pointer;
     color: white;
-    background-color: rgb(12, 172, 68);
+    transition: .4s;
+    background-color: var(--dark-green);
 }
 
 button:hover {
-    background-color: rgb(13, 205, 80);
+    background-color: var(--light-green);
+    color: var(--dark-blue);
+    font-size: 110%;
+    scale: 1.05;
 }
 
 .button.new {
@@ -152,6 +161,11 @@ button:hover {
 .negative {
     background-color: var(--dark-red);
 }
+
+.neutral {
+    background-color: #8c8c8c;
+}
+
 /* Data-table ====================*/
 #transaction {
     display: block;
@@ -249,6 +263,7 @@ td.income {
 }
 
 #form form input {
+    font-family: vox, sans-serif;
     border: none;
     border-radius: 0.25rem;
     padding: 0.7rem;
@@ -271,6 +286,7 @@ td.income {
 
 .input-group.actions .button,
 .input-group.actions button {
+    font-family: vox, sans-serif;
     width: 48%;
 }
 
