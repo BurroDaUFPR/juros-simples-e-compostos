@@ -3,10 +3,10 @@
 :root {
     --dark-blue: #293040;
     --dark-blue-variation: #414b64;
-    --light-green: #b0e004;
-    --dark-green: #88A61B;
+    --light-green: #9cc701;
+    --dark-green: #5f760d;
     --background-color: rgb(205, 205, 205);
-    --bright-red: rgb(220, 38, 38);
+    --bright-red: rgb(211, 60, 60);
     --dark-red: rgb(150, 37, 37);
 }
 
@@ -25,6 +25,8 @@ html {
 body {
     background-color: var(--background-color);
     font-family: vox, sans-serif;
+    min-height: 100vh;
+    position: relative;
 }
 
 .container {
@@ -48,12 +50,12 @@ body {
 
 header {
     background-image: 
-    linear-gradient(90deg, rgba(255, 153, 0, 0.65), rgba(144, 20, 144, 0.65)),
+    linear-gradient(90deg, rgba(255, 153, 0, 0.75), rgba(144, 20, 144, 0.65)),
     url(assets/header-background.jpg);
     
     background-size: contain;
     background-blend-mode: soft-light;
-    animation: bg-animation 35s infinite alternate;
+    animation: bg-animation 30s infinite alternate;
 
     padding: 1.75rem 0rem 7.5rem;
     text-align: center;
@@ -86,7 +88,6 @@ a {
 
 a:hover {   
     font-size: 110%;
-    scale: 1.05;
     color: var(--light-green);
 }
 
@@ -133,7 +134,7 @@ button:hover {
 /* Balance ====================*/
 #balance {
     justify-content: center;
-    margin-top: -5.6rem;
+    margin-top: -4.2rem;
 }
 
 #balance h2{
@@ -144,11 +145,11 @@ button:hover {
 /* Cards ====================*/
 .card {
     background-color: #fff;
-    padding: 1.5rem 2rem;
+    padding: 1.75rem 2.25rem;
     border-radius: 0.25rem;
     margin-bottom: 1.25rem;
 
-    color: var(--dark-pink);
+    color: var(--dark-blue);
 }
 
 .card h3 {
@@ -160,8 +161,8 @@ button:hover {
 }
 
 .card p {
-    font-size: 1.9rem;
-    line-height: 3rem;
+    font-size: 2.5rem;
+    line-height: 4rem;
 }
 
 .positive {
@@ -169,7 +170,7 @@ button:hover {
 }
 
 .negative {
-    background-color: var(--dark-red);
+    background-color: var(--bright-red);
 }
 
 .neutral {
@@ -184,6 +185,7 @@ button:hover {
 
 #data-table {
     width: 100%;
+    margin-bottom: 10rem;
     border-spacing: 0rem 0.75rem; 
 }
 
@@ -222,15 +224,15 @@ table tbody tr td:last-child {
 }
 
 td.description {
-    color: var(--dark-pink)
+    color: var(--dark-blue)
 }
 
 td.expense {
-    color: rgb(220, 38, 38)
+    color: var(--bright-red)
 }
 
 td.income {
-    color: rgb(47, 166, 47);
+    color: var(--light-green);
 }
 
 /* Modal ====================*/
@@ -284,8 +286,10 @@ td.income {
     margin-top: 0.75rem;
 }
 
-#form form .input-group .help {
-    opacity: 0.5;
+#form form .help {
+    margin-top: 0.25rem;
+    font-size: 90%;
+    opacity: .45;
 }
 
 .input-group.actions {
@@ -301,9 +305,38 @@ td.income {
 }
 
 /* Footer ====================*/
+footer p {
+    font-size: 1.15rem;
+    margin-right: 0.5rem;
+}
+
+footer a img{
+    width: 1.75rem;
+    transition: .25s;
+}
+
+footer a img:hover{
+    width: 2.25rem;
+}
+
 footer {
-    text-align: center;
-    margin-top: 1rem;
+    background-image: linear-gradient(90deg, var(--dark-blue-variation), var(--light-green), rgb(176, 23, 176), rgb(255, 196, 0));
+    background-size: 250%;
+    animation: ft-animation 20s infinite alternate;
+    padding: 1rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+@keyframes ft-animation {
+    0% {background-position: left}
+    100% {background-position: right}
 }
 
 /* Responsive ====================*/
@@ -313,7 +346,7 @@ footer {
     }
 
     header {
-        animation: bg-animation 120s infinite alternate;
+        animation: bg-animation 100s infinite alternate;
     }
 
     #balance {
