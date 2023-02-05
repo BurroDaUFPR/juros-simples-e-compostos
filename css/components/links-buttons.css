@@ -69,3 +69,13 @@ button:hover {
 .button.cancel:hover {
     opacity: 1
 }
+
+/* || Transaction Remove Button */
+
+.transaction-remove {
+    transition: .25s;
+}
+
+.transaction-remove:hover {
+    scale: 1.15;
+}
