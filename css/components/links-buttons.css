@@ -1,15 +1,27 @@
-/* || New Transaction Link */
+/* || Links */
 
-a {
-    color: var(--dark-green);
-    font-size: 105%;
+.button.new {
+    border-radius: 0.75rem;
+    color: green;
+    border: green solid 0.15rem;
+    font-size: 106%;
+    padding: .25rem;
     text-decoration: none;
     transition: .4s;
 }
 
-a:hover {   
+.button.new:hover {   
     font-size: 110%;
-    color: var(--light-green);
+    background-color: rgba(49, 128, 49, 0.5);
+    color: white;
+}
+
+.github-link {
+    transition: .25s;
+}
+
+.github-link:hover {
+    scale: 1.15;
 }
 
 /* || Save Transaction Button */
@@ -46,7 +58,8 @@ button:hover {
     color: var(--bright-red);
     height: 50px;
     border: 2px solid var(--bright-red);
-    border-radius: 0.25rem; 
+    border-radius: 0.25rem;
+    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;

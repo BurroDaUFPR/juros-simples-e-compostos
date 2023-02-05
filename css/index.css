@@ -2,7 +2,7 @@
 
 @import url(./components/titles.css);
 @import url(./components/links-buttons.css);
-@import url(./components/balance-card.css);
+@import url(./components/balance-cards.css);
 @import url(./components/form.css);
 @import url(./components/data-table.css);
 @import url(./components/footer.css);
@@ -20,7 +20,6 @@
 }
 
 html {
-    transition: .3s;
     font-size: 93.75%;
 }
 
@@ -35,11 +34,12 @@ body {
     background-color: var(--background-color);
     font-family: vox, sans-serif;
     min-height: 100vh;
+    overflow-x: hidden;
     position: relative;
 }
 
 .container {
-    width: min(90vw, 800px);
+    width: min(95vw, 375px);
     margin: auto;
 }
 
@@ -56,19 +56,56 @@ body {
 }
 
 /* || Responsive */
-
 @media (min-width: 760px) {
     html {
         font-size: 87.5% 
     }
 
+    .container {
+        width: min(90vw, 760px);
+    }
+
     header {
-        animation: bg-animation 100s infinite alternate;
+        animation: bg-animation 80s infinite alternate;
     }
 
     #balance {
+        margin-top: -6rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .card {
+        padding: 1.5rem 2rem;
+        width: 100%;
+    }
+
+    .card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .card p {
+        font-size: 2.5rem;
+        line-height: 4rem;
+    }
+
+    #transaction {
+        table-layout: fixed;
+        overflow-x: hidden;
+    }
+
+    #data-table {
+        width: 100%;
+        margin-bottom: 10rem;
+        border-spacing: 0rem 0.75rem; 
+    }
+
+    table th {
+        padding: 1.5rem 1.5rem; 
+    }
+    
+    table td {
+        padding: 1rem 1rem;
     }
 }

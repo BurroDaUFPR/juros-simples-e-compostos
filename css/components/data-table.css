@@ -5,7 +5,7 @@
 }
 
 #data-table {
-    width: 100%;
+    width: 160%;
     margin-bottom: 10rem;
     border-spacing: 0rem 0.75rem; 
 }
@@ -14,7 +14,7 @@ table th {
     background-color: #fff;
     font-weight: normal;
     text-align: left;
-    padding: 2rem 2rem;
+    padding: 1.5rem 1.5rem;
     color: rgb(104, 104, 104);
     
 }
@@ -22,6 +22,7 @@ table th {
 table td {
     background-color: #fff;
     padding: 1rem 2rem;
+
     color: rgb(104, 104, 104);
 }
 

@@ -39,7 +39,7 @@ const Transaction = {
                 income += transaction.amount
             }
         })
-        return income;
+        return income
     },
     expenses() {
         let expense = 0
@@ -53,7 +53,6 @@ const Transaction = {
     total() {
         let total = 0 
         total = Transaction.incomes() + Transaction.expenses()
-        Utils.formatColorTotalCard(total)
         return total
     }
 }
@@ -83,16 +82,24 @@ const DOM = {
     },
 
     updateBalance() {
+        const incomes = Transaction.incomes()
+        const expenses = Transaction.expenses()
+        const total = Transaction.total()
+
         document
             .querySelector('#incomeDisplay')
             .innerHTML = Utils.formatCurrency(Transaction.incomes())
+        
         document
             .querySelector('#expenseDisplay')
             .innerHTML = Utils.formatCurrency(Transaction.expenses())
+    
         document
             .querySelector('#totalDisplay')
-            .innerHTML = Utils.formatCurrency(Transaction.total())
-    }, 
+            .innerHTML = Utils.formatCurrency(total)
+        
+        Utils.formatColorTotalCard(total)
+    },
 
     clearTransactions() {
         DOM.transactionsContainer.innerHTML = ""
@@ -121,12 +128,18 @@ const Utils = {
     formatColorTotalCard(value){
         const ValueToChangeColor = Number(value)
         if (ValueToChangeColor === 0){
+            document.querySelector('.card.total').classList.remove('positive')
+            document.querySelector('.card.total').classList.remove('negative')
             document.querySelector('.card.total').classList.add('neutral')    
         } 
         else if (ValueToChangeColor > 0){
+            document.querySelector('.card.total').classList.remove('neutral')
+            document.querySelector('.card.total').classList.remove('negative')
             document.querySelector('.card.total').classList.add('positive')
         }
         else {
+            document.querySelector('.card.total').classList.remove('positive')
+            document.querySelector('.card.total').classList.remove('neutral')
             document.querySelector('.card.total').classList.add('negative')
         }
     }
@@ -139,7 +152,7 @@ const Form = {
     
     validateFilds() {
         const {description, amount, date} = Form.getValues()
-        if(description.trim() === "" || amount.trim() === "" || date.trim() === "") {
+        if(description.trim() == "" || amount.trim() == "" || date.trim() == "") {
             throw new Error("Preencha todos os campos")
         }
     },

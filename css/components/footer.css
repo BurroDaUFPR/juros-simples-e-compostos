@@ -4,12 +4,12 @@ footer p {
     margin-right: 0.5rem;
 }
 
-footer a img{
+footer .github-link img{
     width: 1.75rem;
     transition: .25s;
 }
 
-footer a img:hover{
+footer .github-link img:hover{
     width: 2.25rem;
 }
 

@@ -7,7 +7,7 @@ header {
     
     background-size: contain;
     background-blend-mode: soft-light;
-    animation: bg-animation 30s infinite alternate;
+    animation: bg-animation 24s infinite;
 
     padding: 1.75rem 0rem 7.5rem;
     text-align: center;
@@ -19,7 +19,7 @@ header {
 }
 
 #logo {
-    width: 20rem;
+    width: 17rem;
 }
 
 /* || Subtitles */
