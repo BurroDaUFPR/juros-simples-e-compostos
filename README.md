@@ -1,3 +1,3 @@
 # Calculadora de finanças
 
-Em breve...
+Versão Beta
