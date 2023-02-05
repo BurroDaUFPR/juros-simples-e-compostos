@@ -1,0 +1,34 @@
+/* Footer ====================*/
+footer p {
+    font-size: 1.15rem;
+    margin-right: 0.5rem;
+}
+
+footer a img{
+    width: 1.75rem;
+    transition: .25s;
+}
+
+footer a img:hover{
+    width: 2.25rem;
+}
+
+footer {
+    background-image: linear-gradient(90deg, var(--dark-blue-variation), var(--light-green), rgb(176, 23, 176), rgb(255, 196, 0));
+    background-size: 250%;
+    animation: ft-animation 20s infinite alternate;
+    padding: 1rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+@keyframes ft-animation {
+    0% {background-position: left}
+    100% {background-position: right}
+}

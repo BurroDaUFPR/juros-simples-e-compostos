@@ -1,0 +1,74 @@
+/* || Components Import */
+
+@import url(./components/titles.css);
+@import url(./components/links-buttons.css);
+@import url(./components/balance-card.css);
+@import url(./components/form.css);
+@import url(./components/data-table.css);
+@import url(./components/footer.css);
+
+/* || Global */
+
+:root {
+    --dark-blue: #293040;
+    --dark-blue-variation: #414b64;
+    --light-green: #9cc701;
+    --dark-green: #5f760d;
+    --background-color: rgb(205, 205, 205);
+    --bright-red: rgb(211, 60, 60);
+    --dark-red: rgb(150, 37, 37);
+}
+
+html {
+    transition: .3s;
+    font-size: 93.75%;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: vox, sans-serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container {
+    width: min(90vw, 800px);
+    margin: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* || Responsive */
+
+@media (min-width: 760px) {
+    html {
+        font-size: 87.5% 
+    }
+
+    header {
+        animation: bg-animation 100s infinite alternate;
+    }
+
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
